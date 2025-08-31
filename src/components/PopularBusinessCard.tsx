@@ -173,8 +173,8 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
       <div className="h-[20px] bg-[#58BB8A] flex items-center justify-end px-2">
         {isLicenseValid(business.license_expired_date) && (
           <div className="flex items-center gap-1">
-            <BadgeCheck className="w-3 h-3 text-white" />
-            <span className="text-white text-xs font-medium uppercase">Verified</span>
+            <Check className="w-3 h-3 text-white bg-white/20 rounded-full p-0.5" />
+            <span className="text-white text-[10px] font-medium uppercase">Verified</span>
           </div>
         )}
       </div>
