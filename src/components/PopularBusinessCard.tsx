@@ -170,7 +170,14 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
       </div>
       
       {/* Light green section positioned under the product images */}
-      <div className="h-[20px] bg-[#58BB8A] flex items-center justify-end px-2">
+      <div className="h-[20px] bg-[#58BB8A] flex items-center justify-between px-2">
+        <Button
+          variant="outline"
+          size="sm"
+          className="h-4 px-2 text-[9px] text-black bg-white border-gray-300 hover:bg-gray-50"
+        >
+          Reviews
+        </Button>
         {isLicenseValid(business.license_expired_date) && (
           <div className="flex items-center gap-1">
             <Check className="w-3 h-3 text-green-600 bg-white rounded-full p-0.5" />
