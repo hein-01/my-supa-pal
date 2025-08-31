@@ -170,7 +170,7 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
       </div>
       
       {/* Light green section positioned under the product images */}
-      <div className="h-[20px] bg-[#58BB8A] flex items-center justify-between px-2">
+      <div className="h-[26px] bg-[#58BB8A] flex items-center justify-between px-2">
         <Button
           variant="outline"
           size="sm"
