@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Facebook, Instagram, MessageCircle, Bookmark, Check, BadgeCheck, MapPin, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Facebook, Instagram, MessageCircle, Bookmark, Check, BadgeCheck, MapPin, ChevronRight, ChevronLeft, Star } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -35,6 +39,64 @@ interface PopularBusinessCardProps {
 
 export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
   const [openModal, setOpenModal] = useState(false);
+  const [openReviewModal, setOpenReviewModal] = useState(false);
+  const [reviewData, setReviewData] = useState({ rating: 5, comment: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleReviewSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Get current user
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        toast({
+          title: "Authentication required",
+          description: "Please sign in to submit a review.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Update the businesses table with the new review
+      const { data: currentBusiness } = await supabase
+        .from('businesses')
+        .select('reviews')
+        .eq('id', business.id)
+        .single();
+
+      const currentReviews = currentBusiness?.reviews || [];
+      const newReview = `${reviewData.rating}/5 - ${reviewData.comment}`;
+      const updatedReviews = [...currentReviews, newReview];
+
+      const { error } = await supabase
+        .from('businesses')
+        .update({ reviews: updatedReviews })
+        .eq('id', business.id);
+
+      if (error) throw error;
+
+      toast({
+        title: "Review submitted!",
+        description: "Thank you for your feedback.",
+      });
+
+      setReviewData({ rating: 5, comment: '' });
+      setOpenReviewModal(false);
+    } catch (error) {
+      console.error('Error submitting review:', error);
+      toast({
+        title: "Error",
+        description: "Failed to submit review. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const getOptionColors = (index: number) => {
     const colors = [
@@ -171,13 +233,73 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
       
       {/* Light green section positioned under the product images */}
       <div className="h-[26px] bg-[#58BB8A] flex items-center justify-between px-2">
-        <Button
-          variant="outline"
-          size="sm"
-          className="h-4 px-2 text-[9px] text-black bg-white border-gray-300 hover:bg-gray-50"
-        >
-          Reviews
-        </Button>
+        <Dialog open={openReviewModal} onOpenChange={setOpenReviewModal}>
+          <DialogTrigger asChild>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-4 px-2 text-[9px] text-black bg-white border-gray-300 hover:bg-gray-50"
+            >
+              Reviews
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Write a Review for {business.name}</DialogTitle>
+            </DialogHeader>
+            <form onSubmit={handleReviewSubmit} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="rating">Rating</Label>
+                <div className="flex items-center gap-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button
+                      key={star}
+                      type="button"
+                      onClick={() => setReviewData({ ...reviewData, rating: star })}
+                      className="focus:outline-none"
+                    >
+                      <Star
+                        className={`w-6 h-6 ${
+                          star <= reviewData.rating
+                            ? 'fill-yellow-400 text-yellow-400'
+                            : 'text-gray-300'
+                        }`}
+                      />
+                    </button>
+                  ))}
+                  <span className="ml-2 text-sm text-muted-foreground">
+                    {reviewData.rating}/5
+                  </span>
+                </div>
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="comment">Your Review</Label>
+                <Textarea
+                  id="comment"
+                  placeholder="Share your experience with this business..."
+                  value={reviewData.comment}
+                  onChange={(e) => setReviewData({ ...reviewData, comment: e.target.value })}
+                  required
+                  rows={4}
+                />
+              </div>
+              
+              <div className="flex justify-end gap-2">
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  onClick={() => setOpenReviewModal(false)}
+                >
+                  Cancel
+                </Button>
+                <Button type="submit" disabled={isSubmitting || !reviewData.comment.trim()}>
+                  {isSubmitting ? 'Submitting...' : 'Submit Review'}
+                </Button>
+              </div>
+            </form>
+          </DialogContent>
+        </Dialog>
         {isLicenseValid(business.license_expired_date) && (
           <div className="flex items-center gap-1">
             <Check className="w-3 h-3 text-green-600 bg-white rounded-full p-0.5" />
