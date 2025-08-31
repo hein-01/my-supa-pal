@@ -174,7 +174,7 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
         {isLicenseValid(business.license_expired_date) && (
           <div className="flex items-center gap-1">
             <Check className="w-3 h-3 text-green-600 bg-white rounded-full p-0.5" />
-            <span className="text-white text-[10px] font-medium uppercase">Verified</span>
+            <span className="text-white text-[9px] font-medium uppercase">Verified</span>
           </div>
         )}
       </div>
