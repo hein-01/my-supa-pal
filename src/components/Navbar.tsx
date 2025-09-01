@@ -112,7 +112,7 @@ export const Navbar = () => {
                   ))}
                 </Swiper>
               </Link>
-              <Badge className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs px-2 py-0">
+              <Badge className="absolute -top-2 -right-1 bg-yellow-400 text-black text-xs px-2 py-0">
                 $10/month
               </Badge>
             </div>
@@ -206,7 +206,7 @@ export const Navbar = () => {
                           ))}
                         </Swiper>
                       </Link>
-                      <Badge className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs px-2 py-0">
+                      <Badge className="absolute -top-2 -right-1 bg-yellow-400 text-black text-xs px-2 py-0">
                         $10/month
                       </Badge>
                     </div>
