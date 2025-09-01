@@ -22,7 +22,7 @@ export const Navbar = () => {
   
   const buttonTexts = [
     "Get Website + POS",
-    "Free Listing"
+    "Free Business Listing"
   ];
 
   return (
@@ -113,7 +113,7 @@ export const Navbar = () => {
                 </Swiper>
               </Link>
               <Badge className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs px-2 py-0">
-                New
+                $10/month
               </Badge>
             </div>
           </div>
@@ -207,7 +207,7 @@ export const Navbar = () => {
                         </Swiper>
                       </Link>
                       <Badge className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs px-2 py-0">
-                        New
+                        $10/month
                       </Badge>
                     </div>
                   </div>
