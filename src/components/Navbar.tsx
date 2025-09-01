@@ -28,7 +28,7 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-18">
           {/* Left Side - Logo and Find Shops */}
           <div className="flex items-center space-x-6">
             <Link to="/" className="flex items-center space-x-2 relative z-50">
@@ -112,7 +112,7 @@ export const Navbar = () => {
                   ))}
                 </Swiper>
               </Link>
-              <Badge className="absolute -top-2 -right-1 bg-yellow-400 text-black text-xs px-2 py-0">
+              <Badge className="absolute -top-3 -right-1 bg-yellow-400 text-black text-xs px-2 py-0">
                 $10/month
               </Badge>
             </div>
@@ -206,7 +206,7 @@ export const Navbar = () => {
                           ))}
                         </Swiper>
                       </Link>
-                      <Badge className="absolute -top-2 -right-1 bg-yellow-400 text-black text-xs px-2 py-0">
+                      <Badge className="absolute -top-3 -right-1 bg-yellow-400 text-black text-xs px-2 py-0">
                         $10/month
                       </Badge>
                     </div>
