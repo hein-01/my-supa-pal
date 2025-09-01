@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, ShoppingBag, Compass } from "lucide-react";
+import { useTypingEffect } from "@/hooks/useTypingEffect";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import BusinessDirectory from "./BusinessDirectory";
@@ -25,6 +26,7 @@ const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("product");
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
+  const typingPlaceholder = useTypingEffect("Search by business name, etc", 80);
 
   const heroBackgrounds = [heroBg1, heroBg2, heroBg3];
   const heroBackgroundsMobile = [heroBgMobile1, heroBgMobile2, heroBgMobile3];
@@ -111,7 +113,7 @@ const Index = () => {
             
             <Input
               type="text"
-              placeholder=""
+              placeholder={typingPlaceholder}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="flex-1 border-0 text-gray-600 placeholder-gray-400 focus-visible:ring-0"
