@@ -26,7 +26,7 @@ const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("product");
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
-  const typingPlaceholder = useTypingEffect("Search by business name, etc", 50);
+  const typingPlaceholder = useTypingEffect("Search by business name, etc", 20);
 
   const heroBackgrounds = [heroBg1, heroBg2, heroBg3];
   const heroBackgroundsMobile = [heroBgMobile1, heroBgMobile2, heroBgMobile3];
