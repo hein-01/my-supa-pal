@@ -4,6 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { Building2, Smartphone, ChevronDown, Menu, X } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,6 +19,11 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 export const Navbar = () => {
   const { user, profile, signOut } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  const buttonTexts = [
+    "Get Website + POS",
+    "Free Listing"
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
@@ -81,11 +90,28 @@ export const Navbar = () => {
             )}
             
             <div className="relative">
-              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg font-medium">
-                <Link to="/list-&-get-pos-website">
-                  Get Online Shop Website + POS
-                </Link>
-              </Button>
+              <Link to="/list-&-get-pos-website" className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-lg font-medium h-10 flex items-center overflow-hidden">
+                <Swiper
+                  direction="vertical"
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  loop={true}
+                  className="h-6 w-full"
+                  modules={[Autoplay]}
+                >
+                  {buttonTexts.map((text, index) => (
+                    <SwiperSlide key={index} className="h-6 flex items-center">
+                      <span className="text-sm font-medium text-center w-full">
+                        {text}
+                      </span>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </Link>
               <Badge className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs px-2 py-0">
                 New
               </Badge>
@@ -158,11 +184,28 @@ export const Navbar = () => {
                     </Button>
                     
                     <div className="relative">
-                      <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                        <Link to="/list-&-get-pos-website" onClick={() => setIsMobileMenuOpen(false)}>
-                          Get Online Shop Website + POS
-                        </Link>
-                      </Button>
+                      <Link to="/list-&-get-pos-website" onClick={() => setIsMobileMenuOpen(false)} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-12 flex items-center px-4 rounded-lg overflow-hidden">
+                        <Swiper
+                          direction="vertical"
+                          spaceBetween={0}
+                          slidesPerView={1}
+                          autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                          }}
+                          loop={true}
+                          className="h-6 w-full"
+                          modules={[Autoplay]}
+                        >
+                          {buttonTexts.map((text, index) => (
+                            <SwiperSlide key={index} className="h-6 flex items-center">
+                              <span className="text-sm font-medium text-center w-full">
+                                {text}
+                              </span>
+                            </SwiperSlide>
+                          ))}
+                        </Swiper>
+                      </Link>
                       <Badge className="absolute -top-1 -right-1 bg-yellow-400 text-black text-xs px-2 py-0">
                         New
                       </Badge>
