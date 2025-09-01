@@ -33,7 +33,7 @@ export const Navbar = () => {
           <div className="flex items-center space-x-6">
             <Link to="/" className="flex items-center space-x-2 relative z-50">
               <Building2 className="h-6 w-6 text-primary border border-gray-300 rounded p-1" />
-              <span className="text-xl font-bold text-foreground">wellfinds</span>
+              <span className="text-xl font-bold text-foreground animate-pulse bg-gradient-to-r from-primary via-blue-500 to-purple-500 bg-clip-text text-transparent animate-[glow_2s_ease-in-out_infinite_alternate] drop-shadow-[0_0_10px_theme(colors.primary)]">wellfinds</span>
             </Link>
             
             {/* Find Shops next to logo */}

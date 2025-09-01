@@ -124,6 +124,19 @@ All colors MUST be HSL.
   }
 }
 
+/* Logo glow animation */
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px hsl(var(--primary))) brightness(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px hsl(var(--primary))) drop-shadow(0 0 30px hsla(220, 70%, 65%, 0.8)) brightness(1.2);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px hsl(var(--primary))) brightness(1);
+  }
+}
+
 /* Custom Swiper pagination styles for Popular Businesses */
 .popular-businesses-swiper .swiper-pagination {
   position: relative !important;
