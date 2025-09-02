@@ -100,7 +100,7 @@ const Index = () => {
                   <SwiperSlide key={category.value} className="h-10 flex items-center">
                      <button
                        onClick={() => setSelectedCategory(category.value)}
-                       className={`w-full h-full text-black font-medium text-xs sm:text-sm flex items-center justify-center px-4 ${
+                       className={`w-full h-full text-black font-medium text-xs sm:text-sm flex items-center justify-center px-1 sm:px-4 ${
                          selectedCategory === category.value ? 'bg-yellow-500' : 'bg-yellow-400'
                        }`}
                      >
@@ -116,7 +116,7 @@ const Index = () => {
               placeholder={typingPlaceholder}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="flex-1 border-0 text-gray-600 placeholder-gray-400 focus-visible:ring-0"
+              className="flex-1 border-0 text-gray-600 placeholder-gray-400 focus-visible:ring-0 text-sm sm:text-base placeholder:text-xs sm:placeholder:text-sm"
             />
             
             <Button className="bg-transparent hover:bg-transparent text-muted-foreground px-3 py-2 rounded-md flex items-center justify-center">
