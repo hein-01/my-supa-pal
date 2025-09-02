@@ -111,7 +111,7 @@ const PopularBusinesses = () => {
                 bulletClass: 'swiper-pagination-bullet',
                 bulletActiveClass: 'swiper-pagination-bullet-active'
               }}
-              spaceBetween={20}
+              spaceBetween={15}
               slidesPerView={1}
               breakpoints={{
                 480: {
@@ -120,19 +120,19 @@ const PopularBusinesses = () => {
                 },
                 640: {
                   slidesPerView: 2,
-                  spaceBetween: 20,
+                  spaceBetween: 15,
                 },
                 768: {
-                  slidesPerView: 2.5,
-                  spaceBetween: 20,
+                  slidesPerView: 2.2,
+                  spaceBetween: 12,
                 },
                 1024: {
                   slidesPerView: 3,
-                  spaceBetween: 20,
+                  spaceBetween: 25,
                 },
                 1280: {
                   slidesPerView: 4,
-                  spaceBetween: 20,
+                  spaceBetween: 30,
                 },
               }}
             loop={false}
