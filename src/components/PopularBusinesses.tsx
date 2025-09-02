@@ -111,44 +111,22 @@ const PopularBusinesses = () => {
                 bulletClass: 'swiper-pagination-bullet',
                 bulletActiveClass: 'swiper-pagination-bullet-active'
               }}
-              spaceBetween={15}
-              slidesPerView={1}
-              breakpoints={{
-                480: {
-                  slidesPerView: 1,
-                  spaceBetween: 20,
-                },
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 15,
-                },
-                768: {
-                  slidesPerView: 2.2,
-                  spaceBetween: 12,
-                },
-                1024: {
-                  slidesPerView: 3,
-                  spaceBetween: 25,
-                },
-                1280: {
-                  slidesPerView: 4,
-                  spaceBetween: 30,
-                },
-              }}
-            loop={false}
-            grabCursor={true}
-            centeredSlides={false}
-            className="popular-businesses-swiper pb-12"
-          >
+              spaceBetween={20}
+              slidesPerView={'auto'}
+              loop={false}
+              grabCursor={true}
+              centeredSlides={false}
+              className="popular-businesses-swiper pb-12"
+            >
             {businesses.map((business) => (
-              <SwiperSlide key={business.id}>
+              <SwiperSlide key={business.id} className="!w-auto">
                 <PopularBusinessCard business={business} />
               </SwiperSlide>
             ))}
             
             {/* Fixed seventh card - Discover more shops */}
             <SwiperSlide key="discover-more">
-              <Card className="group w-full max-w-[320px] h-[455px] flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 mx-auto bg-gradient-to-br from-slate-800 to-slate-900">
+              <Card className="group w-[280px] h-[475px] flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 mx-auto bg-gradient-to-br from-slate-800 to-slate-900">
                 <div className="relative overflow-hidden rounded-t-lg h-[200px] bg-gradient-to-br from-slate-700 to-slate-800">
                   <img
                     src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=320&h=200&fit=crop"
@@ -190,31 +168,21 @@ const PopularBusinesses = () => {
                 horizontalClass: 'swiper-pagination-horizontal'
               }}
               spaceBetween={20}
-              slidesPerView={1.15}
-              breakpoints={{
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                768: {
-                  slidesPerView: 2.5,
-                  spaceBetween: 20,
-                },
-              }}
+              slidesPerView={'auto'}
               loop={false}
               grabCursor={true}
               centeredSlides={false}
               className="popular-businesses-swiper-mobile pb-12 pl-4"
             >
             {businesses.map((business) => (
-              <SwiperSlide key={business.id}>
+              <SwiperSlide key={business.id} className="!w-auto">
                 <PopularBusinessCard business={business} />
               </SwiperSlide>
             ))}
               
               {/* Fixed seventh card - Discover more shops (Mobile) */}
               <SwiperSlide key="discover-more-mobile">
-                <Card className="group w-full max-w-[320px] h-[455px] flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 mx-auto bg-gradient-to-br from-slate-800 to-slate-900">
+                <Card className="group w-[280px] h-[475px] flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 mx-auto bg-gradient-to-br from-slate-800 to-slate-900">
                   <div className="relative overflow-hidden rounded-t-lg h-[200px] bg-gradient-to-br from-slate-700 to-slate-800">
                     <img
                       src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=320&h=200&fit=crop"
