@@ -114,6 +114,10 @@ const PopularBusinesses = () => {
               spaceBetween={20}
               slidesPerView={1}
               breakpoints={{
+                480: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
                 640: {
                   slidesPerView: 2,
                   spaceBetween: 20,
