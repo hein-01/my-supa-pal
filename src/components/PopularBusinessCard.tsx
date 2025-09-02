@@ -298,7 +298,7 @@ export const PopularBusinessCard = ({ business }: PopularBusinessCardProps) => {
   const hasMultipleImages = business.product_images && business.product_images.length > 1;
 
   return (
-    <Card className="group w-full max-w-[320px] h-[470px] flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 mx-auto">
+    <Card className="group w-[280px] h-[475px] flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 mx-auto">
       <div className="relative overflow-hidden rounded-t-lg">
         <Swiper
           modules={[Navigation, Pagination]}
