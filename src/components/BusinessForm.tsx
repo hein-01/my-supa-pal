@@ -124,6 +124,11 @@ export default function BusinessForm({ onSuccess, editingBusiness }: BusinessFor
     }
   };
 
+  // Function to remove dollar sign from price display
+  const removeDollarSign = (price: string) => {
+    return price.replace('$', '').trim();
+  };
+
   // Fetch plan prices and locations when component mounts
   useEffect(() => {
     const fetchPlanPrices = async () => {
@@ -899,7 +904,7 @@ export default function BusinessForm({ onSuccess, editingBusiness }: BusinessFor
               </div>
               <Input
                 id="listingPrice"
-                value={listingPrice}
+                value={removeDollarSign(listingPrice)}
                 readOnly
                 className="bg-muted cursor-not-allowed"
                 placeholder="Loading..."
@@ -913,7 +918,7 @@ export default function BusinessForm({ onSuccess, editingBusiness }: BusinessFor
               </div>
               <Input
                 id="odooPrice"
-                value={odooPrice}
+                value={removeDollarSign(odooPrice)}
                 readOnly
                 className="bg-muted cursor-not-allowed"
                 placeholder="Loading..."
@@ -931,7 +936,7 @@ export default function BusinessForm({ onSuccess, editingBusiness }: BusinessFor
               id="startingPrice"
               value={formData.startingPrice}
               onChange={(e) => handleInputChange('startingPrice', e.target.value)}
-              placeholder="$20, From $50, etc."
+              placeholder="20, From 50, etc."
               className="border-2 border-border/60 bg-card shadow-sm focus:border-primary/50 focus:ring-2 focus:ring-primary/10 transition-all duration-200 hover:border-border/80"
             />
           </div>
@@ -983,7 +988,7 @@ export default function BusinessForm({ onSuccess, editingBusiness }: BusinessFor
             {formData.onlineShopOption === 'maybe' && (
               <div className="ml-6 p-3 bg-green-50 border border-green-200 rounded-lg">
                 <p className="text-sm text-green-800 font-medium">
-                  The total is 10 USD. Please choose the suitable payment options below.
+                  Thanks! You can get POS + Website from your user dashboard at any time. To learn more about how it can make your business more profitable, kindly check <a href="/list-&-get-pos-website" className="text-blue-600 underline">here</a>.
                 </p>
               </div>
             )}
