@@ -1001,7 +1001,11 @@ export default function BusinessForm({ onSuccess, editingBusiness }: BusinessFor
               </div>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="bank" id="bank" />
-                <Label htmlFor="bank">Bank/Digital Payments</Label>
+                <Label htmlFor="bank">Bank Transfer</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="digital" id="digital" />
+                <Label htmlFor="digital">Digital Payments</Label>
               </div>
             </RadioGroup>
 
@@ -1023,10 +1027,74 @@ export default function BusinessForm({ onSuccess, editingBusiness }: BusinessFor
                       accept="image/*,.pdf"
                       onChange={handleReceiptChange}
                       className="sr-only"
-                      required={formData.paymentOption === 'bank'}
+                      required={formData.paymentOption === 'bank' || formData.paymentOption === 'digital'}
                     />
                     <label
                       htmlFor="receipt"
+                      className="flex items-center justify-center gap-3 w-full p-4 border-2 border-dashed border-orange-300 rounded-lg bg-orange-50 hover:bg-orange-100 hover:border-orange-400 transition-all duration-200 cursor-pointer group"
+                    >
+                      <Upload className="h-5 w-5 text-orange-600 group-hover:text-orange-700 transition-colors" />
+                      <div className="text-center">
+                        <p className="text-sm font-medium text-orange-700 group-hover:text-orange-800">
+                          Choose Receipt File
+                        </p>
+                        <p className="text-xs text-orange-600 mt-1">
+                          PNG, JPG, or PDF (max 1MB)
+                        </p>
+                      </div>
+                    </label>
+                  </div>
+                  {receiptFile && (
+                    <div className="flex items-center gap-2 p-2 bg-green-50 border border-green-200 rounded-md">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <p className="text-sm text-green-700">Selected: {receiptFile.name}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {formData.paymentOption === 'digital' && (
+              <div className="space-y-4 ml-6 p-4 bg-muted/50 rounded-lg">
+                <p className="text-sm font-medium text-primary">
+                  The total is ${calculateTotalPrice().toFixed(2)}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Please make payment to Bank ABC 1234567, or True Money 610123456
+                </p>
+                
+                {/* Digital Payment Options Images */}
+                <div className="flex justify-center gap-4 py-4">
+                  <img 
+                    src="/src/assets/digital-payment-1.jpg" 
+                    alt="Digital Payment Option 1" 
+                    className="w-[180px] h-[180px] object-cover rounded-lg shadow-sm"
+                  />
+                  <img 
+                    src="/src/assets/digital-payment-2.jpg" 
+                    alt="Mobile Payment Option" 
+                    className="w-[180px] h-[180px] object-cover rounded-lg shadow-sm"
+                  />
+                  <img 
+                    src="/src/assets/digital-payment-3.jpg" 
+                    alt="QR Payment Option" 
+                    className="w-[180px] h-[180px] object-cover rounded-lg shadow-sm"
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="receipt-digital">Upload your receipt *</Label>
+                  <div className="relative">
+                    <input
+                      id="receipt-digital"
+                      type="file"
+                      accept="image/*,.pdf"
+                      onChange={handleReceiptChange}
+                      className="sr-only"
+                      required={formData.paymentOption === 'digital'}
+                    />
+                    <label
+                      htmlFor="receipt-digital"
                       className="flex items-center justify-center gap-3 w-full p-4 border-2 border-dashed border-orange-300 rounded-lg bg-orange-50 hover:bg-orange-100 hover:border-orange-400 transition-all duration-200 cursor-pointer group"
                     >
                       <Upload className="h-5 w-5 text-orange-600 group-hover:text-orange-700 transition-colors" />
