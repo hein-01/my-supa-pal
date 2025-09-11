@@ -726,7 +726,7 @@ export default function ListBusiness() {
 
               {/* Online Shop + POS Option */}
               <div className="space-y-4">
-                <Label>Enjoy a free 14-day Online Shop Website and POS. Please also rest assured that you will be informed before your trial expires. Only $10 a month after that, and can cancel anytime.</Label>
+                <Label>Enjoy a free 1 month Online Shop Website and POS for your business. Please also rest assured that you will be informed before your trial expires. Only $10 a month after that, and can cancel anytime.</Label>
                 <RadioGroup
                   value={formData.onlineShopOption}
                   onValueChange={(value) => handleInputChange('onlineShopOption', value)}
@@ -744,7 +744,7 @@ export default function ListBusiness() {
                 {formData.onlineShopOption === 'sure' && (
                   <div className="ml-6 p-3 bg-green-50 border border-green-200 rounded-lg">
                     <p className="text-sm text-green-800 font-medium">
-                      Within 48 hours, your online shop website and POS (plus other apps like Inventory and Sales) will be ready. We'll send you the link, login details, and detailed instructions in an email. The total is 10 USD. You can choose the suitable payment options below.
+                      Within 48 hours, your online shop website and POS (plus other apps like Inventory and Sales) will be ready. We'll send you the link, login details, and detailed instructions in an email. You can choose the suitable payment options below.
                     </p>
                   </div>
                 )}
@@ -752,7 +752,7 @@ export default function ListBusiness() {
                 {formData.onlineShopOption === 'maybe' && (
                   <div className="ml-6 p-3 bg-green-50 border border-green-200 rounded-lg">
                     <p className="text-sm text-green-800 font-medium">
-                      The total is 10 USD. Please choose the suitable payment options below.
+                      Please choose the suitable payment options below.
                     </p>
                   </div>
                 )}
