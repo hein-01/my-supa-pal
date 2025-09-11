@@ -898,10 +898,7 @@ export default function BusinessForm({ onSuccess, editingBusiness }: BusinessFor
           {/* Plan Prices */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <DollarSign className="h-4 w-4 text-muted-foreground" />
-                <Label htmlFor="listingPrice">Listing Price</Label>
-              </div>
+              <Label htmlFor="listingPrice">Listing Price</Label>
               <Input
                 id="listingPrice"
                 value={removeDollarSign(listingPrice)}
@@ -912,10 +909,7 @@ export default function BusinessForm({ onSuccess, editingBusiness }: BusinessFor
             </div>
             
             <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <DollarSign className="h-4 w-4 text-muted-foreground" />
-                <Label htmlFor="odooPrice">Odoo Price</Label>
-              </div>
+              <Label htmlFor="odooPrice">Odoo Price</Label>
               <Input
                 id="odooPrice"
                 value={removeDollarSign(odooPrice)}
@@ -928,10 +922,7 @@ export default function BusinessForm({ onSuccess, editingBusiness }: BusinessFor
 
           {/* Pricing */}
           <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <DollarSign className="h-5 w-5 text-green-600" />
-              <Label htmlFor="startingPrice" className="text-sm font-medium text-foreground">Starting Price</Label>
-            </div>
+            <Label htmlFor="startingPrice" className="text-sm font-medium text-foreground">Starting Price</Label>
             <Input
               id="startingPrice"
               value={formData.startingPrice}
