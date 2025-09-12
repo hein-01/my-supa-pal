@@ -110,9 +110,18 @@ export default function FindShops() {
         query = query.eq("category", normalizedCategory);
       }
 
-      // Apply location filter
+      // Apply location filter - handle both single location and "town, province" format
       if (locationFilter) {
-        query = query.or(`city.ilike.%${locationFilter}%,state.ilike.%${locationFilter}%`);
+        const locationParts = locationFilter.split(',').map(part => part.trim());
+        
+        if (locationParts.length === 2) {
+          // Format: "town, province" - search for town in city and province in state
+          const [town, province] = locationParts;
+          query = query.or(`city.ilike.%${town}%,state.ilike.%${province}%,city.ilike.%${province}%,state.ilike.%${town}%`);
+        } else {
+          // Single location - search in both city and state
+          query = query.or(`city.ilike.%${locationFilter}%,state.ilike.%${locationFilter}%`);
+        }
       }
 
       const { data, error } = await query;
