@@ -14,8 +14,8 @@ interface Business {
   name: string;
   description: string;
   category: string;
-  city: string;
-  state: string;
+  towns: string;
+  province_district: string;
   rating: number;
   image_url: string;
   website: string;
@@ -47,8 +47,8 @@ const PopularBusinesses = () => {
           name,
           description,
           category,
-          city,
-          state,
+          towns,
+          province_district,
           rating,
           image_url,
           website,

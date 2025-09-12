@@ -134,7 +134,6 @@ export type Database = {
           address: string | null
           business_options: string[] | null
           category: string | null
-          city: string | null
           created_at: string
           description: string | null
           email: string | null
@@ -152,11 +151,12 @@ export type Database = {
           "POS+Website": number | null
           product_images: string[] | null
           products_catalog: string | null
+          province_district: string | null
           rating: number | null
           receipt_url: string | null
           starting_price: string | null
-          state: string | null
           tiktok_url: string | null
+          towns: string | null
           updated_at: string
           user_email: string | null
           website: string | null
@@ -166,7 +166,6 @@ export type Database = {
           address?: string | null
           business_options?: string[] | null
           category?: string | null
-          city?: string | null
           created_at?: string
           description?: string | null
           email?: string | null
@@ -184,11 +183,12 @@ export type Database = {
           "POS+Website"?: number | null
           product_images?: string[] | null
           products_catalog?: string | null
+          province_district?: string | null
           rating?: number | null
           receipt_url?: string | null
           starting_price?: string | null
-          state?: string | null
           tiktok_url?: string | null
+          towns?: string | null
           updated_at?: string
           user_email?: string | null
           website?: string | null
@@ -198,7 +198,6 @@ export type Database = {
           address?: string | null
           business_options?: string[] | null
           category?: string | null
-          city?: string | null
           created_at?: string
           description?: string | null
           email?: string | null
@@ -216,11 +215,12 @@ export type Database = {
           "POS+Website"?: number | null
           product_images?: string[] | null
           products_catalog?: string | null
+          province_district?: string | null
           rating?: number | null
           receipt_url?: string | null
           starting_price?: string | null
-          state?: string | null
           tiktok_url?: string | null
+          towns?: string | null
           updated_at?: string
           user_email?: string | null
           website?: string | null

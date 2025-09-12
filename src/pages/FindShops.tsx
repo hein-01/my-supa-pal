@@ -15,8 +15,8 @@ interface Business {
   description?: string;
   category: string;
   address?: string;
-  city?: string;
-  state?: string;
+  towns?: string;
+  province_district?: string;
   zip_code?: string;
   phone?: string;
   email?: string;
@@ -115,12 +115,12 @@ export default function FindShops() {
         const locationParts = locationFilter.split(',').map(part => part.trim());
         
         if (locationParts.length === 2) {
-          // Format: "town, province" - search for town in city and province in state
+          // Format: "town, province" - search for town in towns and province in province_district
           const [town, province] = locationParts;
-          query = query.or(`city.ilike.%${town}%,state.ilike.%${province}%,city.ilike.%${province}%,state.ilike.%${town}%`);
+          query = query.or(`towns.ilike.%${town}%,province_district.ilike.%${province}%,towns.ilike.%${province}%,province_district.ilike.%${town}%`);
         } else {
-          // Single location - search in both city and state
-          query = query.or(`city.ilike.%${locationFilter}%,state.ilike.%${locationFilter}%`);
+          // Single location - search in both towns and province_district
+          query = query.or(`towns.ilike.%${locationFilter}%,province_district.ilike.%${locationFilter}%`);
         }
       }
 

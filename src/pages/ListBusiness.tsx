@@ -21,8 +21,8 @@ interface BusinessFormData {
   phone: string;
   licenseExpiredDate: string;
   address: string;
-  city: string;
-  state: string;
+  towns: string;
+  province_district: string;
   zipCode: string;
   website: string;
   facebookPage: string;
@@ -82,8 +82,8 @@ export default function ListBusiness() {
     phone: "",
     licenseExpiredDate: "",
     address: "",
-    city: "",
-    state: "",
+    towns: "",
+    province_district: "",
     zipCode: "",
     website: "",
     facebookPage: "",
@@ -276,8 +276,8 @@ export default function ListBusiness() {
           category: formData.category,
           phone: formData.phone,
           address: formData.address,
-          city: formData.city,
-          state: formData.state,
+          towns: formData.towns,
+          province_district: formData.province_district,
           zip_code: formData.zipCode,
           website: formData.website,
           image_url: logoUrl || null,
@@ -523,23 +523,23 @@ export default function ListBusiness() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="city">City *</Label>
+                    <Label htmlFor="towns">Town *</Label>
                     <Input
-                      id="city"
-                      value={formData.city}
-                      onChange={(e) => handleInputChange('city', e.target.value)}
-                      placeholder="City"
+                      id="towns"
+                      value={formData.towns}
+                      onChange={(e) => handleInputChange('towns', e.target.value)}
+                      placeholder="Town"
                       required
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="state">State *</Label>
+                    <Label htmlFor="province_district">Province/District *</Label>
                     <Input
-                      id="state"
-                      value={formData.state}
-                      onChange={(e) => handleInputChange('state', e.target.value)}
-                      placeholder="State"
+                      id="province_district"
+                      value={formData.province_district}
+                      onChange={(e) => handleInputChange('province_district', e.target.value)}
+                      placeholder="Province/District"
                       required
                     />
                   </div>
