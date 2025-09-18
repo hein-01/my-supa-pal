@@ -164,6 +164,10 @@ export default {
 					'100%': { 
 						'background-position': '0% 50%'
 					}
+				},
+				'slow-spin': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
@@ -174,7 +178,8 @@ export default {
 				'slide-up': 'slide-up 0.4s ease-out',
 				'wave': 'wave 1s ease-in-out infinite',
 				'gradient': 'gradient 3s ease-in-out infinite',
-				'shift-glow': 'shift-glow 3s ease-in-out infinite'
+				'shift-glow': 'shift-glow 3s ease-in-out infinite',
+				'slow-spin': 'slow-spin 4s linear infinite'
 			}
 		}
 	},

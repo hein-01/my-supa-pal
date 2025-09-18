@@ -152,9 +152,8 @@ const Index = () => {
               {/* Illustration */}
               <div className="flex-shrink-0 animate-scale-in">
                 <div className="relative">
-                  <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-500 hover:scale-105 animate-spin">
-                    <div className="w-16 h-16 md:w-20 md:h-20 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                      <ShoppingBag className="w-8 h-8 md:w-10 md:h-10 text-white" strokeWidth={1.5} />
+                  <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-500 hover:scale-105 animate-slow-spin">
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-white/20 rounded-full backdrop-blur-sm">
                     </div>
                   </div>
                   {/* Floating elements */}
