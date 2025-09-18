@@ -148,13 +148,13 @@ const Index = () => {
             <div className="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-2xl"></div>
             <div className="absolute -bottom-8 -left-8 w-28 h-28 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-2xl"></div>
             
-            <div className="relative z-10 p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="relative z-10 p-6 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-6">
               {/* Illustration */}
               <div className="flex-shrink-0 animate-scale-in">
                 <div className="relative">
-                  <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-500 hover:scale-105">
-                    <div className="w-20 h-20 md:w-24 md:h-24 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                      <ShoppingBag className="w-10 h-10 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
+                  <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 rounded-full flex items-center justify-center shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-500 hover:scale-105">
+                    <div className="w-16 h-16 md:w-20 md:h-20 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                      <ShoppingBag className="w-8 h-8 md:w-10 md:h-10 text-white" strokeWidth={1.5} />
                     </div>
                   </div>
                   {/* Floating elements */}
@@ -165,10 +165,10 @@ const Index = () => {
               
               {/* Content */}
               <div className="flex-1 text-center lg:text-left max-w-2xl">
-                <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 dark:from-white dark:via-purple-200 dark:to-white bg-clip-text text-transparent mb-6 leading-tight">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 dark:from-white dark:via-purple-200 dark:to-white bg-clip-text text-transparent mb-4 leading-tight">
                   Find a business or Start your online business!
                 </h2>
-                <div className="space-y-4 text-base md:text-lg">
+                <div className="space-y-4 text-sm md:text-base">
                   <div className="flex items-center justify-center lg:justify-start gap-3 group">
                     <div className="w-6 h-6 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full hidden md:flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
                       <span className="text-white text-sm font-bold">✓</span>
@@ -192,10 +192,10 @@ const Index = () => {
               
               {/* CTA Buttons */}
               <div className="flex flex-col gap-4 min-w-fit">
-                <Button className="bg-gradient-to-r from-slate-900 to-slate-700 hover:from-slate-800 hover:to-slate-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <Button className="bg-gradient-to-r from-slate-900 to-slate-700 hover:from-slate-800 hover:to-slate-600 text-white px-6 py-3 rounded-xl font-semibold text-base shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1">
                   Find Shops
                 </Button>
-                <Button variant="outline" className="border-2 border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 bg-white/50 backdrop-blur-sm" asChild>
+                <Button variant="outline" className="border-2 border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 bg-white/50 backdrop-blur-sm" asChild>
                   <Link to="/list-business">
                     <span className="flex items-center gap-2">
                       List your business
