@@ -192,10 +192,10 @@ const Index = () => {
               
               {/* CTA Buttons */}
               <div className="flex flex-col gap-4 min-w-fit">
-                <Button className="bg-gradient-to-r from-slate-900 to-slate-700 hover:from-slate-800 hover:to-slate-600 text-white px-6 py-3 rounded-xl font-semibold text-base shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                <Button className="bg-gradient-to-r from-slate-900 to-slate-700 hover:from-slate-800 hover:to-slate-600 text-white px-6 py-3 rounded-xl font-semibold text-base shadow-xl hover:shadow-2xl transition-all duration-300">
                   Find Shops
                 </Button>
-                <Button variant="outline" className="border-2 border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1 bg-white/50 backdrop-blur-sm" asChild>
+                <Button variant="outline" className="border-2 border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-xl font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 bg-white/50 backdrop-blur-sm" asChild>
                   <Link to="/list-business">
                     <span className="flex items-center gap-2">
                       List your business
