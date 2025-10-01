@@ -103,14 +103,14 @@ const facilities = [
 const rules = [
   "Bare bodies and bare feet prohibited",
   "Respect all staff and other players",
-  "No competitions allowed",
-  "Exit promptly after session",
+  "No competitions without prior permission",
+  "Please leave the court on time for the next group.",
   "Players under 18 supervised",
-  "Soccer boots requirements",
+  "Proper Footwear Required(Futsal shoes or flat-soled shoes only)",
   "No smoking",
   "No littering (Garbage bins provided)",
   "No alcohol",
-  "Follow staff instructions",
+  "No Glass Bottles / Containers",
   "Report any damage",
   "Keep facilities clean",
 ];
