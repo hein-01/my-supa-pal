@@ -108,7 +108,7 @@ const rules = [
   "Players under 18 supervised",
   "Soccer boots requirements",
   "No smoking",
-  "No littering",
+  "No littering (Garbage bins provided)",
   "No alcohol",
   "Follow staff instructions",
   "Report any damage",
