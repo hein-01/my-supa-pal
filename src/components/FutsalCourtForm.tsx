@@ -10,6 +10,12 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
   Select,
   SelectContent,
   SelectItem,
@@ -604,6 +610,37 @@ export const FutsalCourtForm = () => {
                   )}
                 />
               ))}
+            </div>
+
+            <div className="mt-6">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-left">
+                    Why bare bodies and bare feet are prohibited in some field rental businesses?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">
+                    Playing without proper Soccer shoes is a safety concern. Football fields, especially artificial turf, can be abrasive, increasing the risk of cuts, blisters, and turf burns on bare skin. Kicking a hard football or colliding with another player's foot while barefoot can easily lead to broken toes. Sliding or falling on abrasive turf without a shirt can result in severe and painful turf burns that are prone to infection. However, banning players who can't afford proper Soccer shoes goes against the goal of a community-focused business. To balance safety with accessibility, a field rental business can offer a shoe loan or rental program. You can maintain a "shoe library" of turf shoes in various sizes, charging a small rental fee to cover cleaning and replacement. Requiring a refundable deposit and the use of socks with all rental shoes can ensure the program is both sustainable and hygienic.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2">
+                  <AccordionTrigger className="text-left">
+                    Why no competitions are allowed in some field rental businesses?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">
+                    Organized competitions, such as tournaments or league matches, inherently involve higher stakes, more intense physical play, and greater potential for severe injuries than a casual practice or friendly "pick-up" game. More importantly, when competition is combined with significant money incentives (either from illegal betting or prize money), the level of physical intensity escalates far beyond a casual game. Players are more likely to commit dangerous fouls, argue aggressively, and resort to violence to protect their financial stake. Fighting on the field is a direct threat to the safety of all patrons and the facility itself.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3">
+                  <AccordionTrigger className="text-left">
+                    Why some businesses require all minors to be accompanied and supervised by a responsible adult at all times?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">
+                    This is a mandatory, non-negotiable rule for nearly all sports facility rentals and is primarily driven by three core concerns: Liability, Safety, and Facility Protection. By requiring a responsible adult, the facility is legally transferring the direct supervision and immediate liability for the minor's safety and conduct to that adult (parent, guardian, or authorized coach). In a severe emergency, the facility staff cannot authorize medical treatment for a minor. The accompanying adult serves as the crucial link to parents, providing immediate consent for medical care.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </CardContent>
         </Card>
