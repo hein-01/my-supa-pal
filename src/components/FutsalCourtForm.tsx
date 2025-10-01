@@ -586,33 +586,11 @@ export const FutsalCourtForm = () => {
             <CardTitle>Player Rules</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {rules.map((rule) => (
-                <FormField
-                  key={rule}
-                  control={form.control}
-                  name="rules"
-                  render={({ field }) => (
-                    <FormItem className="flex items-center space-x-2">
-                      <FormControl>
-                        <Checkbox
-                          checked={field.value?.includes(rule)}
-                          onCheckedChange={(checked) => {
-                            const newValue = checked
-                              ? [...(field.value || []), rule]
-                              : field.value?.filter((v) => v !== rule);
-                            field.onChange(newValue);
-                          }}
-                        />
-                      </FormControl>
-                      <FormLabel className="!mt-0 font-normal">{rule}</FormLabel>
-                    </FormItem>
-                  )}
-                />
-              ))}
-            </div>
+            <p className="text-sm text-muted-foreground mb-6">
+              This list of player rules is based on data from similar field rental businesses in other countries and current global industry standards. Please select only the rules that apply to your business.
+            </p>
 
-            <div className="mt-6">
+            <div className="mb-6">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
                   <AccordionTrigger className="text-left">
@@ -641,6 +619,32 @@ export const FutsalCourtForm = () => {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {rules.map((rule) => (
+                <FormField
+                  key={rule}
+                  control={form.control}
+                  name="rules"
+                  render={({ field }) => (
+                    <FormItem className="flex items-center space-x-2">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value?.includes(rule)}
+                          onCheckedChange={(checked) => {
+                            const newValue = checked
+                              ? [...(field.value || []), rule]
+                              : field.value?.filter((v) => v !== rule);
+                            field.onChange(newValue);
+                          }}
+                        />
+                      </FormControl>
+                      <FormLabel className="!mt-0 font-normal">{rule}</FormLabel>
+                    </FormItem>
+                  )}
+                />
+              ))}
             </div>
           </CardContent>
         </Card>
